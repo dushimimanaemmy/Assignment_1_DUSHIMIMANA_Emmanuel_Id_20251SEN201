@@ -1,4 +1,4 @@
-# Sunrise Suppermarket Database
+# PROJECT IS Sunrise Supermarket SYSTEM
 ## NAME:DUSHIMIMANA Emmanuel
 ## Id:20251SEN201
 
