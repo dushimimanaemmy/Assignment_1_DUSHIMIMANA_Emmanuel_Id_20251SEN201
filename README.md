@@ -23,8 +23,8 @@
 SELECT o.order_id, c.customer_name, c.city, o.order_date FROM orders o 
 INNER JOIN customers c ON o.customer_id = c.customer_id ORDER BY o.order_date;
 ### what it answers It helps management know who placed each order, where the customer is located, and when the order was placed.
-### Output is: 
-
+### Output is open this link:
+https://github.com/dushimimanaemmy/Assignment_1_DUSHIMIMANA_Emmanuel_Id_20251SEN201/blob/eedbfdadf6ecc96074bb1f80e2b3919354ae1f6c/Output/Output_Q1.png
 
 ## Question two: It about list Every Order Item with Product Information.
 ### For the purpose of this query joins the order_items and products tables to display the product purchased, its category, price, and quantity ordered.
