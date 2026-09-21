@@ -22,7 +22,6 @@ email VARCHAR2(100),
 city VARCHAR2(50)
 );
 ```
-
 ```sql CREATETABLE products (
 product_id NUMBER PRIMARYKEY,
 product_name VARCHAR2(100),
@@ -45,20 +44,15 @@ product_id NUMBER REFERENCES products(product_id),
 quantity NUMBER
 );
 ```
-
-
 ## then I insert records according and follow this instructions such as Populate each table with realistic sample data: at least 5 customers, 8 products (across at least 3 categories), 15 orders, and 25 order items, spread across multiple dates so trends are visible.
 ### this  show insert query and their output data to customer.
 https://github.com/dushimimanaemmy/Assignment_1_DUSHIMIMANA_Emmanuel_Id_20251SEN201/blob/7ae403c9c1649328421275d8d4d9ba51088712fd/Output/Output_insert_Customer.png
-
 ### this  show insert query and their output data to products.
 https://github.com/dushimimanaemmy/Assignment_1_DUSHIMIMANA_Emmanuel_Id_20251SEN201/blob/5b5ea7aa3d4297830cd94bd8425aa8cb1bc70ebd/Output/Output_product%20iinsert.png
-
 ### this  show insert query and their output data to products.
 https://github.com/dushimimanaemmy/Assignment_1_DUSHIMIMANA_Emmanuel_Id_20251SEN201/blob/222ef54d2507c17ee017246eeca752fb3e4d3b12/Output/Output_orders%20.png
 
 ## JOIN, CTE and Window Function Queries( So I'm start answer for each question their purpose, Query, Screenshot or query results and and explain what it answer).
-
 ## In question one about to list Every Order with Customer Information.
 ### Purpose of scenario is query uses an INNER JOIN between the orders and customers tables. It shows each order together with the customer's name, city, and order date.
 ### Query: 
@@ -71,7 +65,6 @@ https://github.com/dushimimanaemmy/Assignment_1_DUSHIMIMANA_Emmanuel_Id_20251SEN
 
 ## Question two: It about list Every Order Item with Product Information.
 ### For the purpose of this query joins the order_items and products tables to display the product purchased, its category, price, and quantity ordered.
-
 ### Query is:
 ```sql
 SELECT oi.order_item_id, p.product_name, p.category, p.price, oi.quantity 
@@ -80,9 +73,7 @@ FROM order_items oi INNER JOIN products p ON oi.product_id = p.product_id ORDER 
 ### what it answers It shows which products customers are buying, their categories, prices, and the quantities purchased.
 ### OUTPUT open this link: 
 https://github.com/dushimimanaemmy/Assignment_1_DUSHIMIMANA_Emmanuel_Id_20251SEN201/blob/097247c5a209a4a64ca8bc6cee14ea07bdbadc90/Output/Output_Q2(1).png
-
 https://github.com/dushimimanaemmy/Assignment_1_DUSHIMIMANA_Emmanuel_Id_20251SEN201/blob/ca4afc8710d469e5f7820a8a610482b2b7ff21da/Otput_Q2(2).png
-
 
 ## Question Three: It about show All Customers and Their Orders.
 ### For the purpose of this query uses a LEFT JOIN so that all customers are displayed, including customers who have not placed an order.
@@ -141,7 +132,6 @@ ORDER BY o.order_date, o.order_id;
 ## OUTPUT IS open this link:
 https://github.com/dushimimanaemmy/Assignment_1_DUSHIMIMANA_Emmanuel_Id_20251SEN201/blob/3b7421b28bc69b42bc31f16600df716607634ca9/Output/Output_Q7.png
 
-
 ## Question eight is about to display Days Between Customer Orders.
 ### For the purpose of this query uses the LAG() window function to compare each customer's current order date with their previous order date.
 ### QUERY IS:
@@ -158,7 +148,6 @@ ORDER BY customer_name, order_date;
 ### what it answers It This query uses the LAG() window function to retrieve each customer's previous order date. Oracle subtracts the previous order date from the current order date to calculate the number of days between orders. The query only displays customers who have placed more than one order.
 ## OUTPUT IS open this link:
 https://github.com/dushimimanaemmy/Assignment_1_DUSHIMIMANA_Emmanuel_Id_20251SEN201/blob/3b7421b28bc69b42bc31f16600df716607634ca9/Output/Output_Q8.png
-
 
 ## Business Interpretation
 ### The results help Sunrise Supermarket management understand customer purchasing behavior and sales performance. They show which customers place orders, which products are purchased, how much customers spend, customer order frequency, and how revenue changes over time. The analysis also identifies customers who spend above the average and shows the time between repeat orders. This information can help management understand customer behavior, monitor sales, and plan future marketing and sales activities.
