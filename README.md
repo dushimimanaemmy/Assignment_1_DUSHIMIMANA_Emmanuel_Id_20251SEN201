@@ -55,7 +55,7 @@ JOIN products p ON oi.product_id = p.product_id GROUP BY c.customer_id, c.custom
 FROM customer_spending WHERE total_spent > ( SELECT AVG(total_spent) FROM customer_spending ) ORDER BY total_spent DESC;
 ### what it answers Itidentifies customers who spend more than the average customer. Management can use this information to understand their high-spending customers.
 ## OUTPUT IS open this link:
-
+https://github.com/dushimimanaemmy/Assignment_1_DUSHIMIMANA_Emmanuel_Id_20251SEN201/blob/fc5c27e84744193868ca3775eae659dcaec53ec5/Output/Ouput_Q4.png
 
 ## Question five is about to display Rank Customers by Total Amount Spent.
 ### For the purpose of thisquery uses the RANK() window function to rank customers according to their total spending, from the highest amount to the lowest.
