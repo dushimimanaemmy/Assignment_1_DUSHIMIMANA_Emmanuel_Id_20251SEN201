@@ -49,7 +49,8 @@ NUMBER
 ### this  show insert query and their output data to customer.
 https://github.com/dushimimanaemmy/Assignment_1_DUSHIMIMANA_Emmanuel_Id_20251SEN201/blob/7ae403c9c1649328421275d8d4d9ba51088712fd/Output/Output_insert_Customer.png
 
-### this  show insert query and their output data to product.
+### this  show insert query and their output data to products.
+https://github.com/dushimimanaemmy/Assignment_1_DUSHIMIMANA_Emmanuel_Id_20251SEN201/blob/5b5ea7aa3d4297830cd94bd8425aa8cb1bc70ebd/Output/Output_product%20iinsert.png
 
 ### Details about create orders tables and insert data it shows this output.
 
