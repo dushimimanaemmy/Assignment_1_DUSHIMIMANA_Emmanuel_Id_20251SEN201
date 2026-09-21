@@ -33,7 +33,7 @@ INNER JOIN customers c ON o.customer_id = c.customer_id ORDER BY o.order_date;
 SELECT oi.order_item_id, p.product_name, p.category, p.price, oi.quantity 
 FROM order_items oi INNER JOIN products p ON oi.product_id = p.product_id ORDER BY oi.order_item_id;
 ### what it answers It shows which products customers are buying, their categories, prices, and the quantities purchased.
-### OUTPUT: https://github.com/dushimimanaemmy/Assignment_1_DUSHIMIMANA_Emmanuel_Id_20251SEN201/blob/ca4afc8710d469e5f7820a8a610482b2b7ff21da/Otput_Q2(2).png
+### OUTPUT open this link: https://github.com/dushimimanaemmy/Assignment_1_DUSHIMIMANA_Emmanuel_Id_20251SEN201/blob/ca4afc8710d469e5f7820a8a610482b2b7ff21da/Otput_Q2(2).png
 
 
 ## Question Three: It about show All Customers and Their Orders.
@@ -43,7 +43,7 @@ SELECT c.customer_id, c.customer_name, c.city, o.order_id, o.order_date
 FROM customers c LEFT JOIN orders o ON c.customer_id = o.customer_id 
 ORDER BY c.customer_id, o.order_date;
 ### what it answers It helps management identify both active customers and customers who have not yet placed any orders.
-## OUTPUT IS:
+## OUTPUT IS open this link:
 
 ## Question Four is about to display customers Who Spent Above the Average.
 ### For the purpose of this uses a CTE (Common Table Expression) to calculate the total amount spent by each customer. It then calculates the average customer spending and returns only customers whose spending is above that average.
@@ -54,18 +54,18 @@ FROM customers c JOIN orders o ON c.customer_id = o.customer_id JOIN order_items
 JOIN products p ON oi.product_id = p.product_id GROUP BY c.customer_id, c.customer_name ) SELECT customer_id, customer_name, total_spent
 FROM customer_spending WHERE total_spent > ( SELECT AVG(total_spent) FROM customer_spending ) ORDER BY total_spent DESC;
 ### what it answers Itidentifies customers who spend more than the average customer. Management can use this information to understand their high-spending customers.
-## OUTPUT IS:
+## OUTPUT IS open this link:
 
 
 ## Question five is about to display Rank Customers by Total Amount Spent.
 ### For the purpose of thisquery uses the RANK() window function to rank customers according to their total spending, from the highest amount to the lowest.
-### QUERY IS: 
+### QUERY IS : 
 SELECT c.customer_id, c.customer_name, SUM(oi.quantity * p.price) AS total_spent, RANK() OVER ( ORDER BY SUM(oi.quantity * p.price) DESC ) AS spending_rank
 FROM customers c JOIN orders o ON c.customer_id = o.customer_id JOIN order_items oi ON o.order_id = oi.order_id JOIN products p ON oi.product_id = p.product_id 
 GROUP BY c.customer_id, c.customer_name ORDER BY spending_rank;
 ### what it answers It shows the relative spending position of each customer, allowing management to see which customers contribute the most sales.
-## OUTPUT IS:
-
+## OUTPUT IS open this link:
+https://github.com/dushimimanaemmy/Assignment_1_DUSHIMIMANA_Emmanuel_Id_20251SEN201/blob/1a56a55e1a094f9475d2debb2b96c6f22e7d1b2f/Output/Ouptut_Q5.png
 
 ## Question six is about to display Number Each Customer's Orders.
 ### For the purpose of query uses the ROW_NUMBER() window function to number each customer's orders according to the order date.
