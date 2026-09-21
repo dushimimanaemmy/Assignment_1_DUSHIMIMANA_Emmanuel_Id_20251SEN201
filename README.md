@@ -33,7 +33,10 @@ INNER JOIN customers c ON o.customer_id = c.customer_id ORDER BY o.order_date;
 SELECT oi.order_item_id, p.product_name, p.category, p.price, oi.quantity 
 FROM order_items oi INNER JOIN products p ON oi.product_id = p.product_id ORDER BY oi.order_item_id;
 ### what it answers It shows which products customers are buying, their categories, prices, and the quantities purchased.
-### OUTPUT open this link: https://github.com/dushimimanaemmy/Assignment_1_DUSHIMIMANA_Emmanuel_Id_20251SEN201/blob/ca4afc8710d469e5f7820a8a610482b2b7ff21da/Otput_Q2(2).png
+### OUTPUT open this link: 
+https://github.com/dushimimanaemmy/Assignment_1_DUSHIMIMANA_Emmanuel_Id_20251SEN201/blob/097247c5a209a4a64ca8bc6cee14ea07bdbadc90/Output/Output_Q2(1).png
+
+https://github.com/dushimimanaemmy/Assignment_1_DUSHIMIMANA_Emmanuel_Id_20251SEN201/blob/ca4afc8710d469e5f7820a8a610482b2b7ff21da/Otput_Q2(2).png
 
 
 ## Question Three: It about show All Customers and Their Orders.
