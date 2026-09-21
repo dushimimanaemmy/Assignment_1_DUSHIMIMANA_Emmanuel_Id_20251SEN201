@@ -101,7 +101,8 @@ WHERE order_count > 1
   AND previous_order_date IS NOT NULL
 ORDER BY customer_name, order_date;
 ### what it answers It This query uses the LAG() window function to retrieve each customer's previous order date. Oracle subtracts the previous order date from the current order date to calculate the number of days between orders. The query only displays customers who have placed more than one order.
-## OUTPUT IS: 
+## OUTPUT IS open this link:
+https://github.com/dushimimanaemmy/Assignment_1_DUSHIMIMANA_Emmanuel_Id_20251SEN201/blob/3b7421b28bc69b42bc31f16600df716607634ca9/Output/Output_Q8.png
 
 
 ## Business Interpretation
