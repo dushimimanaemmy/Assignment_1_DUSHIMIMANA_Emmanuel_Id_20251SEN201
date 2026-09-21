@@ -52,11 +52,8 @@ https://github.com/dushimimanaemmy/Assignment_1_DUSHIMIMANA_Emmanuel_Id_20251SEN
 ### this  show insert query and their output data to products.
 https://github.com/dushimimanaemmy/Assignment_1_DUSHIMIMANA_Emmanuel_Id_20251SEN201/blob/5b5ea7aa3d4297830cd94bd8425aa8cb1bc70ebd/Output/Output_product%20iinsert.png
 
-### Details about create orders tables and insert data it shows this output.
+### this  show insert query and their output data to products.
 https://github.com/dushimimanaemmy/Assignment_1_DUSHIMIMANA_Emmanuel_Id_20251SEN201/blob/222ef54d2507c17ee017246eeca752fb3e4d3b12/Output/Output_orders%20.png
-
-### Details about create order_items tables and insert data it shows this output.
-
 
 ## JOIN, CTE and Window Function Queries( So I'm start answer for each question their purpose, Query, Screenshot or query results and and explain what it answer).
 
