@@ -14,8 +14,38 @@
 ### -Review the query results and screenshots included in the repository.
 
 ### to do this Assignment there are same SQL/DBMS tool help to perform my assignment is ORACLE DATABASE.
-### Before to run query I created all tables such as customers, products, orders and order_items then I insert records according and follow this instructions such as Populate each table with realistic sample data: at least 5 customers, 8 products (across at least 3 categories), 15 orders, and 25 order items, spread across multiple dates so trends are visible.
-### Details about create customers tables and insert data it shows this output.
+### Before to run query I created all tables such as customers, products, orders and order_items this is query used.
+CREATETABLE customers (
+customer_id NUMBER PRIMARYKEY,
+customer_name VARCHAR2(100),
+email VARCHAR2(100),
+city VARCHAR2(50)
+);
+
+CREATETABLE products (
+product_id NUMBER PRIMARYKEY,
+product_name VARCHAR2(100),
+category VARCHAR2(50),
+price NUMBER(10,2)
+);
+
+CREATETABLE orders (
+order_id
+NUMBERPRIMARYKEY,
+customer_id NUMBER REFERENCES customers(customer_id),
+order_date DATE
+);
+CREATETABLE order_items (
+order_item_id NUMBER PRIMARYKEY,
+order_id
+NUMBERREFERENCESorders(order_id),
+product_id NUMBER REFERENCES products(product_id),
+quantity
+);
+NUMBER
+
+## then I insert records according and follow this instructions such as Populate each table with realistic sample data: at least 5 customers, 8 products (across at least 3 categories), 15 orders, and 25 order items, spread across multiple dates so trends are visible.
+### this output show insert data to customer.
 
 ### Details about create products tables and insert data it shows this output.
 
