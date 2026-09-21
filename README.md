@@ -15,12 +15,13 @@
 
 ### to do this Assignment there are same SQL/DBMS tool help to perform my assignment is ORACLE DATABASE.
 ### Before to run query I created all tables such as customers, products, orders and order_items this is query used.
-CREATETABLE customers (
+```sql CREATETABLE customers (
 customer_id NUMBER PRIMARYKEY,
 customer_name VARCHAR2(100),
 email VARCHAR2(100),
 city VARCHAR2(50)
 );
+```
 
 CREATETABLE products (
 product_id NUMBER PRIMARYKEY,
