@@ -23,28 +23,29 @@ city VARCHAR2(50)
 );
 ```
 
-CREATETABLE products (
+```sql CREATETABLE products (
 product_id NUMBER PRIMARYKEY,
 product_name VARCHAR2(100),
 category VARCHAR2(50),
 price NUMBER(10,2)
 );
-
-CREATETABLE orders (
+```
+```sql CREATETABLE orders (
 order_id
 NUMBERPRIMARYKEY,
 customer_id NUMBER REFERENCES customers(customer_id),
 order_date DATE
 );
-
-CREATETABLE order_items (
+```
+```sql CREATETABLE order_items (
 order_item_id NUMBER PRIMARYKEY,
 order_id
 NUMBERREFERENCESorders(order_id),
 product_id NUMBER REFERENCES products(product_id),
-quantity
+quantity NUMBER
 );
-NUMBER
+```
+
 
 ## then I insert records according and follow this instructions such as Populate each table with realistic sample data: at least 5 customers, 8 products (across at least 3 categories), 15 orders, and 25 order items, spread across multiple dates so trends are visible.
 ### this  show insert query and their output data to customer.
@@ -61,8 +62,9 @@ https://github.com/dushimimanaemmy/Assignment_1_DUSHIMIMANA_Emmanuel_Id_20251SEN
 ## In question one about to list Every Order with Customer Information.
 ### Purpose of scenario is query uses an INNER JOIN between the orders and customers tables. It shows each order together with the customer's name, city, and order date.
 ### Query: 
-SELECT o.order_id, c.customer_name, c.city, o.order_date FROM orders o 
+```sql SELECT o.order_id, c.customer_name, c.city, o.order_date FROM orders o 
 INNER JOIN customers c ON o.customer_id = c.customer_id ORDER BY o.order_date;
+```
 ### what it answers It helps management know who placed each order, where the customer is located, and when the order was placed.
 ### Output is open this link:
 https://github.com/dushimimanaemmy/Assignment_1_DUSHIMIMANA_Emmanuel_Id_20251SEN201/blob/eedbfdadf6ecc96074bb1f80e2b3919354ae1f6c/Output/Output_Q1.png
@@ -71,8 +73,10 @@ https://github.com/dushimimanaemmy/Assignment_1_DUSHIMIMANA_Emmanuel_Id_20251SEN
 ### For the purpose of this query joins the order_items and products tables to display the product purchased, its category, price, and quantity ordered.
 
 ### Query is:
+```sql
 SELECT oi.order_item_id, p.product_name, p.category, p.price, oi.quantity 
 FROM order_items oi INNER JOIN products p ON oi.product_id = p.product_id ORDER BY oi.order_item_id;
+```
 ### what it answers It shows which products customers are buying, their categories, prices, and the quantities purchased.
 ### OUTPUT open this link: 
 https://github.com/dushimimanaemmy/Assignment_1_DUSHIMIMANA_Emmanuel_Id_20251SEN201/blob/097247c5a209a4a64ca8bc6cee14ea07bdbadc90/Output/Output_Q2(1).png
@@ -83,9 +87,10 @@ https://github.com/dushimimanaemmy/Assignment_1_DUSHIMIMANA_Emmanuel_Id_20251SEN
 ## Question Three: It about show All Customers and Their Orders.
 ### For the purpose of this query uses a LEFT JOIN so that all customers are displayed, including customers who have not placed an order.
 ### QUERY IS: 
-SELECT c.customer_id, c.customer_name, c.city, o.order_id, o.order_date 
+```sql SELECT c.customer_id, c.customer_name, c.city, o.order_id, o.order_date 
 FROM customers c LEFT JOIN orders o ON c.customer_id = o.customer_id 
 ORDER BY c.customer_id, o.order_date;
+```
 ### what it answers It helps management identify both active customers and customers who have not yet placed any orders.
 ## OUTPUT IS open this link:
 https://github.com/dushimimanaemmy/Assignment_1_DUSHIMIMANA_Emmanuel_Id_20251SEN201/blob/48760a63a13c931179a1cdb7bf7e215560e1851a/Output/Output_Q3.png
@@ -105,9 +110,10 @@ https://github.com/dushimimanaemmy/Assignment_1_DUSHIMIMANA_Emmanuel_Id_20251SEN
 ## Question five is about to display Rank Customers by Total Amount Spent.
 ### For the purpose of thisquery uses the RANK() window function to rank customers according to their total spending, from the highest amount to the lowest.
 ### QUERY IS : 
-SELECT c.customer_id, c.customer_name, SUM(oi.quantity * p.price) AS total_spent, RANK() OVER ( ORDER BY SUM(oi.quantity * p.price) DESC ) AS spending_rank
+```sql SELECT c.customer_id, c.customer_name, SUM(oi.quantity * p.price) AS total_spent, RANK() OVER ( ORDER BY SUM(oi.quantity * p.price) DESC ) AS spending_rank
 FROM customers c JOIN orders o ON c.customer_id = o.customer_id JOIN order_items oi ON o.order_id = oi.order_id JOIN products p ON oi.product_id = p.product_id 
 GROUP BY c.customer_id, c.customer_name ORDER BY spending_rank;
+```
 ### what it answers It shows the relative spending position of each customer, allowing management to see which customers contribute the most sales.
 ## OUTPUT IS open this link:
 https://github.com/dushimimanaemmy/Assignment_1_DUSHIMIMANA_Emmanuel_Id_20251SEN201/blob/1a56a55e1a094f9475d2debb2b96c6f22e7d1b2f/Output/Ouptut_Q5.png
@@ -115,9 +121,10 @@ https://github.com/dushimimanaemmy/Assignment_1_DUSHIMIMANA_Emmanuel_Id_20251SEN
 ## Question six is about to display Number Each Customer's Orders.
 ### For the purpose of query uses the ROW_NUMBER() window function to number each customer's orders according to the order date.
 ### QUERY IS: 
-SELECT o.order_id, c.customer_name, o.order_date, ROW_NUMBER() OVER ( PARTITION BY c.customer_id ORDER BY o.order_date )
+```sql SELECT o.order_id, c.customer_name, o.order_date, ROW_NUMBER() OVER ( PARTITION BY c.customer_id ORDER BY o.order_date )
 AS order_number FROM orders o JOIN customers c ON o.customer_id = c.customer_id 
 ORDER BY c.customer_name, o.order_date;
+```
 ### what it answers It shows the first, second, third, and later orders made by each customer.
 ## OUTPUT IS open this link:
 https://github.com/dushimimanaemmy/Assignment_1_DUSHIMIMANA_Emmanuel_Id_20251SEN201/blob/d37c3472b4c5ddebf34e9e82d022bb6191cf7dd9/Output/Output_Q6.png
@@ -125,10 +132,11 @@ https://github.com/dushimimanaemmy/Assignment_1_DUSHIMIMANA_Emmanuel_Id_20251SEN
 ## Question seven is about to running Total of Revenue Over Time .
 ### For the purpose of this query calculates the revenue generated by each order and uses a window function to calculate the running total of revenue over time.
 ### QUERY IS:
-SELECT o.order_date, o.order_id, SUM(oi.quantity * p.price) 
+```sql SELECT o.order_date, o.order_id, SUM(oi.quantity * p.price) 
 AS order_revenue, SUM(SUM(oi.quantity * p.price)) OVER ( ORDER BY o.order_date, o.order_id )
 AS running_total_revenue FROM orders o JOIN order_items oi ON o.order_id = oi.order_id JOIN products p ON oi.product_id = p.product_id GROUP BY o.order_date, o.order_id 
 ORDER BY o.order_date, o.order_id;
+```
 ### what it answers It helps management see how total revenue accumulates over time and understand the sales trend.
 ## OUTPUT IS open this link:
 https://github.com/dushimimanaemmy/Assignment_1_DUSHIMIMANA_Emmanuel_Id_20251SEN201/blob/3b7421b28bc69b42bc31f16600df716607634ca9/Output/Output_Q7.png
@@ -137,7 +145,7 @@ https://github.com/dushimimanaemmy/Assignment_1_DUSHIMIMANA_Emmanuel_Id_20251SEN
 ## Question eight is about to display Days Between Customer Orders.
 ### For the purpose of this query uses the LAG() window function to compare each customer's current order date with their previous order date.
 ### QUERY IS:
-SELECT customer_name, order_id, order_date, previous_order_date, order_date - previous_order_date AS days_between_orders
+```sql SELECT customer_name, order_id, order_date, previous_order_date, order_date - previous_order_date AS days_between_orders
 FROM (
     SELECT c.customer_name, o.order_id, o.order_date, LAG(o.order_date) OVER (PARTITION BY c.customer_id ORDER BY o.order_date)
     AS previous_order_date,COUNT(*) OVER ( PARTITION BY c.customer_id ) AS order_count
@@ -146,6 +154,7 @@ FROM (
 WHERE order_count > 1
   AND previous_order_date IS NOT NULL
 ORDER BY customer_name, order_date;
+```
 ### what it answers It This query uses the LAG() window function to retrieve each customer's previous order date. Oracle subtracts the previous order date from the current order date to calculate the number of days between orders. The query only displays customers who have placed more than one order.
 ## OUTPUT IS open this link:
 https://github.com/dushimimanaemmy/Assignment_1_DUSHIMIMANA_Emmanuel_Id_20251SEN201/blob/3b7421b28bc69b42bc31f16600df716607634ca9/Output/Output_Q8.png
