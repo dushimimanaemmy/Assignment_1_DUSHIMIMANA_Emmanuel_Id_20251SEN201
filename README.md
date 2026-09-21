@@ -14,6 +14,15 @@
 ### -Review the query results and screenshots included in the repository.
 
 ### to do this Assignment there are same SQL/DBMS tool help to perform my assignment is ORACLE DATABASE.
+### Before to run query I created all tables such as customers, products, orders and order_items then I insert records according and follow this instructions such as Populate each table with realistic sample data: at least 5 customers, 8 products (across at least 3 categories), 15 orders, and 25 order items, spread across multiple dates so trends are visible.
+### Details about create customers tables and insert data it shows this output.
+
+### Details about create products tables and insert data it shows this output.
+
+### Details about create orders tables and insert data it shows this output.
+
+### Details about create order_items tables and insert data it shows this output.
+
 
 ## JOIN, CTE and Window Function Queries( So I'm start answer for each question their purpose, Query, Screenshot or query results and and explain what it answer).
 
