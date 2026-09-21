@@ -85,7 +85,8 @@ AS order_revenue, SUM(SUM(oi.quantity * p.price)) OVER ( ORDER BY o.order_date, 
 AS running_total_revenue FROM orders o JOIN order_items oi ON o.order_id = oi.order_id JOIN products p ON oi.product_id = p.product_id GROUP BY o.order_date, o.order_id 
 ORDER BY o.order_date, o.order_id;
 ### what it answers It helps management see how total revenue accumulates over time and understand the sales trend.
-## OUTPUT IS: 
+## OUTPUT IS open this link:
+https://github.com/dushimimanaemmy/Assignment_1_DUSHIMIMANA_Emmanuel_Id_20251SEN201/blob/3b7421b28bc69b42bc31f16600df716607634ca9/Output/Output_Q7.png
 
 
 ## Question eight is about to display Days Between Customer Orders.
