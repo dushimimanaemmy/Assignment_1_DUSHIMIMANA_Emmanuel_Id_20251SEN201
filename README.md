@@ -35,6 +35,7 @@ NUMBERPRIMARYKEY,
 customer_id NUMBER REFERENCES customers(customer_id),
 order_date DATE
 );
+
 CREATETABLE order_items (
 order_item_id NUMBER PRIMARYKEY,
 order_id
@@ -45,9 +46,10 @@ quantity
 NUMBER
 
 ## then I insert records according and follow this instructions such as Populate each table with realistic sample data: at least 5 customers, 8 products (across at least 3 categories), 15 orders, and 25 order items, spread across multiple dates so trends are visible.
-### this output show insert data to customer.
+### this  show insert query and their output data to customer.
+https://github.com/dushimimanaemmy/Assignment_1_DUSHIMIMANA_Emmanuel_Id_20251SEN201/blob/7ae403c9c1649328421275d8d4d9ba51088712fd/Output/Output_insert_Customer.png
 
-### Details about create products tables and insert data it shows this output.
+### this  show insert query and their output data to product.
 
 ### Details about create orders tables and insert data it shows this output.
 
