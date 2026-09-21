@@ -44,6 +44,7 @@ FROM customers c LEFT JOIN orders o ON c.customer_id = o.customer_id
 ORDER BY c.customer_id, o.order_date;
 ### what it answers It helps management identify both active customers and customers who have not yet placed any orders.
 ## OUTPUT IS open this link:
+https://github.com/dushimimanaemmy/Assignment_1_DUSHIMIMANA_Emmanuel_Id_20251SEN201/blob/48760a63a13c931179a1cdb7bf7e215560e1851a/Output/Output_Q3.png
 
 ## Question Four is about to display customers Who Spent Above the Average.
 ### For the purpose of this uses a CTE (Common Table Expression) to calculate the total amount spent by each customer. It then calculates the average customer spending and returns only customers whose spending is above that average.
